@@ -83,6 +83,7 @@ public class Board {
     }
 
     // TODO 引数は不要だとおもう。「今」どこに何を置いても勝敗の条件は変わらないので。
+    // TODO 判定処理を賢くしたい。盤面を回転させれば、パターンは4つだけ？
     public boolean judge(Button button, TOKEN token) {
         BOARD_SQUARE square = BOARD_SQUARE.of((String) button.getTag());
 
