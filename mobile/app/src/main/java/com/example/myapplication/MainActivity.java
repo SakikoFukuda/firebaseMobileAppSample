@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Button button = (Button) v;
+        if (board.isFullfill()) return;
 
+        Button button = (Button) v;
         switch (currentTurn){
             case FIRST:
                 button.setText("○");
