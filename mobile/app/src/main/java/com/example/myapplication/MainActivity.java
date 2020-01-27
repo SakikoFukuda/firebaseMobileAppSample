@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.myapplication.marubatu.MaruBatuBoard;
+import com.example.myapplication.marubatu.Board;
 import com.example.myapplication.marubatu.Turn;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // TODO 状態を保持する変数が3つもある。減らしたい。
     private Turn currentTurn;
     private boolean winOrLose = false;
-    private final MaruBatuBoard board = new MaruBatuBoard();
+    private final Board board = new Board();
 
     // TODO 盤面のリセット機能がほしい
 
@@ -40,18 +40,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (currentTurn){
             case FIRST:
                 button.setText("○");
-                board.add(button, MaruBatuBoard.TOKEN.MARU);
-                winOrLose = judge(button, MaruBatuBoard.TOKEN.MARU);
+                board.add(button, Board.TOKEN.MARU);
+                winOrLose = judge(button, Board.TOKEN.MARU);
                 break;
             case SECOND:
                 button.setText("×");
-                board.add(button, MaruBatuBoard.TOKEN.BATU);
-                winOrLose = judge(button, MaruBatuBoard.TOKEN.BATU);
+                board.add(button, Board.TOKEN.BATU);
+                winOrLose = judge(button, Board.TOKEN.BATU);
                 break;
         }
     }
 
-    private boolean judge(Button button, MaruBatuBoard.TOKEN token) {
+    private boolean judge(Button button, Board.TOKEN token) {
         if (board.judge(button, token)) {
             TextView textView = (TextView) findViewById(R.id.maru_batu_result);
             textView.setText("勝負あり！！");

@@ -2,7 +2,7 @@ package com.example.myapplication.marubatu;
 
 import android.widget.Button;
 
-public class MaruBatuBoard {
+public class Board {
 
     public enum BOARD_SQUARE {
         // value値はボタンの「タグ」と合わせる
