@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean judge(Button button, Board.TOKEN token) {
         if (board.judge(button, token)) {
             TextView textView = (TextView) findViewById(R.id.maru_batu_result);
-            textView.setText("勝負あり！！");
+            textView.setText("勝負あり！！"); // TODO visibleを切り替えるようにしたほうが良いかも
             return true;
         } else {
             toggleTurn();
