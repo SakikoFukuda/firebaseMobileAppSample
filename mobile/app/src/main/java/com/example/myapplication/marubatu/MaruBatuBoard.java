@@ -5,6 +5,7 @@ import android.widget.Button;
 public class MaruBatuBoard {
 
     public enum BOARD_SQUARE {
+        // value値はボタンの「タグ」と合わせる
         TOP_LEFT("TopLeft"),
         TOP_CENTER("TopCenter"),
         TOP_RIGHT("TopRight"),
@@ -43,6 +44,10 @@ public class MaruBatuBoard {
 
     private TOKEN[][] board = { {TOKEN.NONE, TOKEN.NONE, TOKEN.NONE}, {TOKEN.NONE, TOKEN.NONE, TOKEN.NONE}, {TOKEN.NONE, TOKEN.NONE, TOKEN.NONE} };
 
+    public void init() {
+        board = new TOKEN[][]{ {TOKEN.NONE, TOKEN.NONE, TOKEN.NONE}, {TOKEN.NONE, TOKEN.NONE, TOKEN.NONE}, {TOKEN.NONE, TOKEN.NONE, TOKEN.NONE} };
+    }
+
     public void add(Button button, TOKEN token) {
         BOARD_SQUARE square = BOARD_SQUARE.of((String) button.getTag());
 
@@ -77,6 +82,7 @@ public class MaruBatuBoard {
         }
     }
 
+    // TODO 引数は不要だとおもう。「今」どこに何を置いても勝敗の条件は変わらないので。
     public boolean judge(Button button, TOKEN token) {
         BOARD_SQUARE square = BOARD_SQUARE.of((String) button.getTag());
 
