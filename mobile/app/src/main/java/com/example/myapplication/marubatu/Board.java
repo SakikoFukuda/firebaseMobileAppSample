@@ -117,7 +117,7 @@ public class Board {
                         || (board[0][2].equals(token) && board[2][2].equals(token)) // 縦
                         ;
             case BOTTOM_LEFT:
-                return (board[2][1].equals(token) && board[2][0].equals(token)) // 横
+                return (board[2][1].equals(token) && board[2][2].equals(token)) // 横
                         || (board[0][0].equals(token) && board[1][0].equals(token)) // 縦
                         || (board[0][2].equals(token) && board[1][1].equals(token)) // 斜め
                         ;
