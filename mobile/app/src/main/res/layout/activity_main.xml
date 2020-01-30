@@ -6,13 +6,125 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="363dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutMiddle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button_top_left"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="121dp"
+            android:layout_height="121dp"
+            android:onClick="onClick"
+            android:tag="TopLeft" />
+
+        <Button
+            android:id="@+id/button_top_center"
+            android:layout_width="121dp"
+            android:layout_height="121dp"
+            android:onClick="onClick"
+            android:tag="TopCenter" />
+
+        <Button
+            android:id="@+id/button_top_right"
+            android:layout_width="121dp"
+            android:layout_height="121dp"
+            android:onClick="onClick"
+            android:tag="TopRight" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutMiddle"
+        android:layout_width="363dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button_middle_left"
+            android:layout_width="121dp"
+            android:layout_height="121dp"
+            android:onClick="onClick"
+            android:tag="MiddleLeft" />
+
+        <Button
+            android:id="@+id/button_middle-center"
+            android:layout_width="121dp"
+            android:layout_height="121dp"
+            android:onClick="onClick"
+            android:tag="MiddleCenter" />
+
+        <Button
+            android:id="@+id/button_middle_right"
+            android:layout_width="121dp"
+            android:layout_height="121dp"
+            android:onClick="onClick"
+            android:tag="MiddleRight" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="363dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="88dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button_bottom_left"
+            android:layout_width="121dp"
+            android:layout_height="121dp"
+            android:onClick="onClick"
+            android:tag="BottomLeft" />
+
+        <Button
+            android:id="@+id/button_bottom_center"
+            android:layout_width="121dp"
+            android:layout_height="121dp"
+            android:onClick="onClick"
+            android:tag="BottomCenter" />
+
+        <Button
+            android:id="@+id/button_bottom_right"
+            android:layout_width="121dp"
+            android:layout_height="121dp"
+            android:onClick="onClick"
+            android:tag="BottomRight" />
+    </LinearLayout>
+
     <TextView
+        android:id="@+id/maru_batu_result"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/turn_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/maru_batu_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
