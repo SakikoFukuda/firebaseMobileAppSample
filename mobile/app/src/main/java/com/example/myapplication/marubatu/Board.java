@@ -143,4 +143,13 @@ public class Board {
         }
         return true;
     }
+
+    public boolean isEmpty() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (!(board[i][j] == TOKEN.NONE)) return false;
+            }
+        }
+        return true;
+    }
 }
