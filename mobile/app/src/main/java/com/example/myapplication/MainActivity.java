@@ -20,8 +20,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean winOrLose = false;
     private final Board board = new Board();
 
-    // TODO 盤面のリセット機能がほしい
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
