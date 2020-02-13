@@ -20,16 +20,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private boolean winOrLose = false;
     private final Board board = new Board();
 
-    // TODO 盤面のリセット機能がほしい
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        TextView textView = (TextView) findViewById(R.id.turn_comment);
-        textView.setText(TURN_FIRST);
-        currentTurn = Turn.FIRST;
+        clearBoard();
     }
 
     @Override
@@ -49,6 +43,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 winOrLose = judge(button, Board.TOKEN.BATU);
                 break;
         }
+    }
+
+    public void onResetButtonClick(View v) {
+        if (board.isEmpty()) return;
+        TextView textViewResult = findViewById(R.id.maru_batu_result);
+        textViewResult.setText("");
+
+        board.init();
+        clearBoard();
+        winOrLose = false;
+    }
+
+    private void clearBoard() {
+        setContentView(R.layout.activity_main);
+        TextView textViewTurn = findViewById(R.id.turn_comment);
+        textViewTurn.setText(TURN_FIRST);
+        currentTurn = Turn.FIRST;
     }
 
     private boolean judge(Button button, Board.TOKEN token) {
